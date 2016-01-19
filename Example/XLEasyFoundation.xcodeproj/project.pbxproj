@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1369D03BDD5EC1C48699B989 /* libPods-XLEasyFoundation_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6BAB3C8C362E282F087F35 /* libPods-XLEasyFoundation_Example.a */; };
+		258FA411905D832B28BB8E46 /* libPods-XLEasyFoundation_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FDE9A1846F83BE46662FEE /* libPods-XLEasyFoundation_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,9 +22,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		7DE1CCD650A6A0B6F9487802 /* Pods_XLEasyFoundation_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FD1F580E7CB49703DB2FD1 /* Pods_XLEasyFoundation_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		C3CF06052325614313F3C9BA /* Pods_XLEasyFoundation_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B32C895445DF2F6CD93637 /* Pods_XLEasyFoundation_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,7 @@
 		27CD65E6B66086534D70F20E /* Pods-XLEasyFoundation_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLEasyFoundation_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XLEasyFoundation_Tests/Pods-XLEasyFoundation_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		38FE91AC5154FA05D5589EDD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		44F273455CC1A48454A77349 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		46FDE9A1846F83BE46662FEE /* libPods-XLEasyFoundation_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XLEasyFoundation_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* XLEasyFoundation_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLEasyFoundation_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,8 +63,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8C36376B05419679DC89934A /* Pods-XLEasyFoundation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLEasyFoundation_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-XLEasyFoundation_Example/Pods-XLEasyFoundation_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8EEC4B24D9309EF2BDBB79F7 /* XLEasyFoundation.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XLEasyFoundation.podspec; path = ../XLEasyFoundation.podspec; sourceTree = "<group>"; };
-		B1FD1F580E7CB49703DB2FD1 /* Pods_XLEasyFoundation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XLEasyFoundation_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6B32C895445DF2F6CD93637 /* Pods_XLEasyFoundation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XLEasyFoundation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB6BAB3C8C362E282F087F35 /* libPods-XLEasyFoundation_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XLEasyFoundation_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBE0F5C85A8022CCCC4657F /* Pods-XLEasyFoundation_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLEasyFoundation_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XLEasyFoundation_Example/Pods-XLEasyFoundation_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				7DE1CCD650A6A0B6F9487802 /* Pods_XLEasyFoundation_Example.framework in Frameworks */,
+				1369D03BDD5EC1C48699B989 /* libPods-XLEasyFoundation_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				C3CF06052325614313F3C9BA /* Pods_XLEasyFoundation_Tests.framework in Frameworks */,
+				258FA411905D832B28BB8E46 /* libPods-XLEasyFoundation_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +121,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				B1FD1F580E7CB49703DB2FD1 /* Pods_XLEasyFoundation_Example.framework */,
-				B6B32C895445DF2F6CD93637 /* Pods_XLEasyFoundation_Tests.framework */,
+				BB6BAB3C8C362E282F087F35 /* libPods-XLEasyFoundation_Example.a */,
+				46FDE9A1846F83BE46662FEE /* libPods-XLEasyFoundation_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

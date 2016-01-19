@@ -1,0 +1,14 @@
+PODS:
+  - XLEasyFoundation (0.1.0)
+
+DEPENDENCIES:
+  - XLEasyFoundation (from `../`)
+
+EXTERNAL SOURCES:
+  XLEasyFoundation:
+    :path: ../
+
+SPEC CHECKSUMS:
+  XLEasyFoundation: 49b18178415094dd53691efcb5394d122c5789fd
+
+COCOAPODS: 0.39.0

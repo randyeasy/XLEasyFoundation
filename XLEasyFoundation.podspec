@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "XLEasyFoundation"
   s.version          = "0.1.0"
-  s.summary          = "A short description of XLEasyFoundation."
+  s.summary          = "封装基于iOS foundation的基础库."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,24 +17,21 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+                    提供NSDate、NSDateFormatter、NSString、FileManager、Error等基础类
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/XLEasyFoundation"
+  s.homepage         = "https://github.com/randyeasy/XLEasyFoundation"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "闫晓亮" => "yanxiaoliang@baijiahulian.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/XLEasyFoundation.git", :tag => s.version.to_s }
+  s.author           = { "Randy" => "ouyaliang@163.com" }
+  s.source           = { :git => "https://github.com/randyeasy/XLEasyFoundation.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'XLEasyFoundation' => ['Pod/Assets/*.png']
-  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+
 end

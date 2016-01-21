@@ -22,7 +22,7 @@ pod "XLEasyFoundation"
 
 ## Author
 
-闫晓亮, yanxiaoliang@baijiahulian.com
+Randy, ouyaliang@163.com
 
 ## License
 

@@ -1,15 +1,14 @@
 //
-//  CacheManagerTool.h
-//  BJEducation_student
+//  XLECacheManagerTool.h
+//  pods
 //
-//  Created by Mrlu-bjhl on 15/1/5.
-//  Copyright (c) 2015年 Baijiahulian. All rights reserved.
+//  Created by Randy on 15/1/5.
 //
 
 #import <Foundation/Foundation.h>
 
 /**
- *  本地文件缓存 NSTemporaryDirectory
+ *  本地文件缓存 Cache 和 临时目录
  */
 @interface XLECacheManagerTool : NSObject
 

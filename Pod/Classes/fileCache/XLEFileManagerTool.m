@@ -1,9 +1,8 @@
 //
-//  FileManagerTool.m
-//  BJEducation_student
+//  XLEFileManagerTool.m
+//  Pods
 //
-//  Created by Mrlu-bjhl on 15/1/19.
-//  Copyright (c) 2015年 Baijiahulian. All rights reserved.
+//  Created by Randy on 15/1/19.
 //
 
 #import "XLEFileManagerTool.h"
@@ -57,7 +56,7 @@
 }
 
 /*文件是否存在*/
-+ (BOOL)isFileExisted:(NSString *)fileName path:(NSString *)path{
++ (BOOL)isFileExistedWithPath:(NSString *)path{
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:path]){
         return NO;
@@ -66,7 +65,7 @@
 }
 
 /*创建指定名字的文件*/
-+ (BOOL)createFile:(NSString *)fileName path:(NSString *)path{
++ (BOOL)createFileWithPath:(NSString *)path{
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:path]){
         [fileManager createFileAtPath:path contents:nil attributes:nil];
@@ -76,7 +75,7 @@
 }
 
 /*创建指定名字的文件夹*/
-+ (BOOL)createDirectory:(NSString *)folder path:(NSString *)path{
++ (BOOL)createDirectoryWithPath:(NSString *)path{
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:path]){
         NSError *error = nil;
@@ -86,14 +85,8 @@
     return NO;
 }
 
-/*得到文件路径*/
-+ (NSString *)getFile:(NSString *)fileName path:(NSString *)path{
-    NSString *filePath = [path stringByAppendingPathComponent:fileName];
-    return filePath;
-}
-
 /*删除文件*/
-+ (BOOL)deleteFile:(NSString *)fileName path:(NSString *)path{
++ (BOOL)deleteFileWithPath:(NSString *)path{
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:path]){
         return NO;
@@ -128,25 +121,9 @@
 {
     NSArray *theList = [XLEFileManagerTool filePathsWithDirPath:path];
     for (NSString *onePath in theList) {
-        [XLEFileManagerTool deleteFile:[onePath lastPathComponent] path:onePath];
+        [XLEFileManagerTool deleteFileWithPath:onePath];
     }
     return YES;
-}
-
-/*得到资源路径*/
-- (NSString *)pathForBundleResource:(NSString *)name ofType:(NSString *)ext
-{
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *path = [bundle pathForResource:name ofType:ext];
-    return path;
-}
-
-/*得到资源路径*/
-+ (NSString *)pathForBundleResource:(NSString *)name ofType:(NSString *)ext inDirectory:(NSString *)subpath {
-    
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *path = [bundle pathForResource:name ofType:ext inDirectory:subpath];
-    return path;
 }
 
 //遍历文件夹获得文件夹大小，返回多少M

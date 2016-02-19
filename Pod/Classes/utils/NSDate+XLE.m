@@ -1,14 +1,11 @@
-/************************************************************
-  *  * EaseMob CONFIDENTIAL 
-  * __________________ 
-  * Copyright (C) 2013-2014 EaseMob Technologies. All rights reserved. 
-  *  
-  * NOTICE: All information contained herein is, and remains 
-  * the property of EaseMob Technologies.
-  * Dissemination of this information or reproduction of this material 
-  * is strictly forbidden unless prior written permission is obtained
-  * from EaseMob Technologies.
-  */
+
+//
+//  NSDate+XLE.h
+//  Pods
+//
+//  Created by Randy on 15/12/31.
+//
+//
 
 #import "NSDate+XLE.h"
 #import "NSDateFormatter+XLE.h"
@@ -309,17 +306,15 @@
 	return [dayString isEqualToString:dayString2];
 }
 
-// This hard codes the assumption that a week is 7 days
 - (BOOL)xle_isSameWeekAsDate: (NSDate *) aDate
 {
+    if (fabs([self timeIntervalSinceDate:aDate]) >= XLE_WEEK) {
+        return NO;
+    }
     NSDateComponents *components1 = [[NSCalendar currentCalendar] components:NSCalendarUnitWeekday fromDate:self];
     NSDateComponents *components2 = [[NSCalendar currentCalendar] components:NSCalendarUnitWeekday fromDate:aDate];
     
-    // Must be same week. 12/31 and 1/1 will both be week "1" if they are in the same week
-    if (components1.weekday != components2.weekday) return NO;
-    
-    // Must have a time interval under 1 week. Thanks @aclark
-    return (fabs([self timeIntervalSinceDate:aDate]) < XLE_WEEK);
+    return (components1.weekOfYear == components2.weekOfYear);
 }
 
 - (BOOL)xle_isSameYearAsDate:(NSDate *)aDate
@@ -520,8 +515,13 @@
 - (NSInteger)xle_weekday
 {
 	NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitWeekday fromDate:self];
-    //TODO
-	return components.weekday;
+    NSInteger weekday = components.weekday;
+    if (weekday == 1) {
+        weekday = 7;
+    }
+    else
+        weekday -= 1;
+	return weekday;
 }
 
 - (NSInteger)xle_year

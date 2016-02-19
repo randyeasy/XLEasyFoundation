@@ -1,8 +1,8 @@
 //
-//  NSString+Utils.h
+//  NSString+XLE.h
 //  Pods
 //
-//  Created by Randy on 15/11/27.
+//  Created by Randy on 16/2/19.
 //
 //
 
@@ -10,38 +10,37 @@
 
 @interface NSString (XLE)
 
-/**
- *  检查字符串是否符合正则表达式
- *
- *  @param aStr 正则表达式
- *
- *  @return 符合：YES，不符合：NO
- */
-- (BOOL)xle_evaluateWithRegex:(NSString *)aStr;
++ (BOOL)xle_compreString:(NSString *)firstStr withString:(NSString *)secondStr;
+
++ (BOOL)xle_rangeOfString:(NSString *)findStr atString:(NSString *)sourceStr;
 
 /**
- *  检查包含是否是重复的数字
+ *  判断file是否存在，不存在则返回nil
  *
- *  @param count 重复几次 大于1
- *
- *  @return 重复：YES count小于2：NO
+ *  @return file存在返回对应的URL，不存在nil
  */
-- (BOOL)xle_isRepeatNum:(NSInteger)count;
+- (NSURL *)xle_fileUrl;
 
 /**
- *  是合法的身份证号 15或18位，最后一位可以是字母，其他都必须是数字
+ *  把一个数字生成固定位数的字符串，不够位数的左边补0
  *
- *  @return 合法：YES
+ *  @param value 数字
+ *  @param num   固定多少位数
+ *
+ *  @return 满足条件的字符串
  */
-- (BOOL)xle_isLegalOwnerId;
-
++ (NSString *)xle_fillZero:(int)value toEnoughBit:(NSInteger)num;
 
 /**
- *  检测是否是纯数字字符串
+ *  把一个字符串重复拼接 例如 @“0” 重复拼接三次，变成 @“000”
  *
- *  @return 是：YES
+ *  @param num 重复次数
+ *
+ *  @return 满足条件的字符串
  */
-- (BOOL)xle_isOnlyNumber;
+- (NSString *)xle_repeatStringWithNum:(NSInteger)num;
+
+- (int16_t)xle_int16Value;
 
 /**
  *  去掉非数字的字符
@@ -49,5 +48,16 @@
  *  @return
  */
 - (NSString *)xle_removeNonNumberStr;
+
+/**
+ *  去掉开头和结尾的空格 换行
+ *
+ *  @return 字符串
+ */
+- (NSString *)xle_trim;
+
+- (BOOL)xle_containsHTMLTag;
+
+- (NSString *)xle_stringByStrippingHTML;
 
 @end

@@ -1,4 +1,12 @@
 
+//
+//  NSDateFormatter+XLE.h
+//  Pods
+//
+//  Created by Randy on 15/12/31.
+//
+//
+
 #import "NSDateFormatter+XLE.h"
 
 @implementation NSDateFormatter (XLE)

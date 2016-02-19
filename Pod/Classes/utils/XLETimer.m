@@ -1,12 +1,25 @@
 
+//
+//  XLETimer.h
+//  Pods
+//
+//  Created by Randy on 15/12/31.
+//
+//
+
+
 #import "XLETimer.h"
 @implementation XLETimer
 
 -(void)time
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     if ([target respondsToSelector:selector]) {
         [target performSelector:selector];
     }
+#pragma clang diagnostic pop
+
 }
 
 - (void)dealloc

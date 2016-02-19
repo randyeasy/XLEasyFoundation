@@ -1,15 +1,15 @@
 //
-//  NSString+MD5Addition.h
-//  UIDeviceAddition
+//  NSString+XLEMD5.h
+//  Pods
 //
-//  Created by Georg Kitz on 20.08.11.
-//  Copyright 2011 Aurora Apps. All rights reserved.
+//  Created by Randy on 16.02.19.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface NSString(XLEMD5)
 
-- (NSString *) xle_stringFromMD5;
+- (NSString *)xle_md5;
+- (NSString *)xle_md5_32;
 
 @end

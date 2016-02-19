@@ -33,5 +33,8 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.dependency 'CocoaLumberjack', '~> 2.2'
+  s.dependency 'Mantle', '~> 2.0'
+
 
 end

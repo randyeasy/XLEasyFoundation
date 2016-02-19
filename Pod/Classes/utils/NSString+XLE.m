@@ -1,63 +1,64 @@
 //
-//  NSString+Utils.m
+//  NSString+XLE.m
 //  Pods
 //
-//  Created by Randy on 15/11/27.
+//  Created by Randy on 16/2/19.
 //
 //
 
 #import "NSString+XLE.h"
+#import "NSString+XLERegex.h"
 
 @implementation NSString (XLE)
 
-/**
- *  检查字符串是否符合正则表达式
- *
- *  @param aStr 正则表达式
- *
- *  @return 符合：YES，不符合：NO
- */
-- (BOOL)xle_evaluateWithRegex:(NSString *)aStr
++ (BOOL)xle_compreString:(NSString *)firstStr withString:(NSString *)secondStr;
 {
-    NSString *regex = aStr;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    return [predicate evaluateWithObject:self];
+    if ((!firstStr && !secondStr) || [firstStr isEqualToString:secondStr]) {
+        return YES;
+    }
+    return NO;
 }
 
-
-/**
- *  是合法的身份证号 15或18位，最后一位可以是字母，其他都必须是数字
- *
- *  @return 合法：YES
- */
-- (BOOL)xle_isLegalOwnerId;
++ (BOOL)xle_rangeOfString:(NSString *)findStr atString:(NSString *)sourceStr;
 {
-    return [self xle_evaluateWithRegex:@"^[0-9]{14,17}[A-Za-z0-9]$"];
-}
-
-/**
- *  检查包含是否是重复的数字
- *
- *  @param count 重复几次 大于1
- *
- *  @return 重复：YES count小于2：NO
- */
-- (BOOL)xle_isRepeatNum:(NSInteger)count;
-{
-    if (count<2) {
+    if (findStr.length<=0 || sourceStr.length<=0) {
         return NO;
     }
-    return [self xle_evaluateWithRegex:[NSString stringWithFormat:@"[0-9]*?(\\d)\\1{%ld}[0-9]*?",(long)(count-1)]];
+    return ([findStr rangeOfString:sourceStr].location != NSNotFound);
 }
 
-/**
- *  检测是否是纯数字字符串
- *
- *  @return 是：YES
- */
-- (BOOL)xle_isOnlyNumber
+- (NSURL *)xle_fileUrl;
 {
-    return [self xle_evaluateWithRegex:@"^[0-9]*"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self]) {
+        return [NSURL fileURLWithPath:self];
+    }
+    return nil;
+}
+
+- (NSString *)xle_repeatStringWithNum:(NSInteger)num;
+{
+    NSMutableString *mut = [[NSMutableString alloc] init];
+    for (int i=0; i<num; i++) {
+        [mut appendString:self];
+    }
+    return [mut copy];
+}
+
++ (NSString *)xle_fillZero:(int)value toEnoughBit:(NSInteger)num;
+{
+    NSString *string = [NSString stringWithFormat:@"%d",value];
+    if (string.length < num) {
+        string = [[@"0" xle_repeatStringWithNum:num - string.length] stringByAppendingString:string];
+    }
+    else if(string.length > num){
+        string = [string substringToIndex:num];
+    }
+    return string;
+}
+
+- (int16_t)xle_int16Value;
+{
+    return (int16_t)[self intValue];
 }
 
 /**
@@ -75,6 +76,31 @@
         }
     }
     return [mutStr copy];
+}
+
+/**
+ *  去掉开头和结尾的空格 换行
+ *
+ *  @return 字符串
+ */
+- (NSString *)xle_trim;
+{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+- (BOOL)xle_containsHTMLTag
+{
+    NSRange r = [self rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch];
+    return r.location != NSNotFound;
+}
+
+- (NSString *)xle_stringByStrippingHTML
+{
+    NSRange r;
+    NSString *s = [self copy];
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    return s;
 }
 
 @end

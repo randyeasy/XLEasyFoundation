@@ -1,9 +1,8 @@
 //
-//  CacheManagerTool.m
-//  BJEducation_student
+//  XLECacheManagerTool.m
+//  Pods
 //
-//  Created by Mrlu-bjhl on 15/1/5.
-//  Copyright (c) 2015年 Baijiahulian. All rights reserved.
+//  Created by Randy on 15/1/5.
 //
 
 #import "XLECacheManagerTool.h"
@@ -16,20 +15,9 @@
 - (void)clearCacheWithSuccess:(void(^)(void))success
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *tmpDir = NSTemporaryDirectory();
-        NSArray *list = [XLEFileManagerTool filePathsWithDirPath:tmpDir];
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        for (NSString *path in list) {
-            NSError *error = nil;
-            if([fileManager removeItemAtPath:path error:&error])
-            {
-                NSLog(@"%@下文件删除成功",path);
-            }
-            else
-            {
-                NSLog(@"%@下文件删除失败:error:%@",path,error.description);
-            }
-        }
+
+        [self clearCacheWithDir:[XLEFileManagerTool cachesDir] success:nil];
+        [self clearCacheWithDir:[XLEFileManagerTool tmpDir] success:nil];
 
        dispatch_async(dispatch_get_main_queue(), ^{
            if (success) {
@@ -43,19 +31,7 @@
 - (void)clearCacheWithDir:(NSString *)dirName success:(void(^)(void))success;
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *tmpDir = NSTemporaryDirectory();
-        tmpDir = [tmpDir stringByAppendingPathComponent:dirName];
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSError *error = nil;
-        if([fileManager removeItemAtPath:tmpDir error:&error])
-        {
-            NSLog(@"%@下文件删除成功",tmpDir);
-        }
-        else
-        {
-            NSLog(@"%@下文件删除失败:error:%@",tmpDir,error.description);
-        }
-        
+        [XLEFileManagerTool deleteFilesWithDirPath:dirName];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                 success();
@@ -68,10 +44,9 @@
 {
     CGFloat fileSize = 0;
     
-    NSString *tmpDir = NSTemporaryDirectory();
-    
-    fileSize += [XLEFileManagerTool folderSizeAtPath:tmpDir];
-    
+    fileSize += [XLEFileManagerTool folderSizeAtPath:[XLEFileManagerTool cachesDir]];
+    fileSize += [XLEFileManagerTool folderSizeAtPath:[XLEFileManagerTool tmpDir]];
+
     return fileSize;
 }
 
@@ -80,9 +55,8 @@
         // 耗时的操作
         CGFloat fileSize = 0;
         
-        NSString *tmpDir = NSTemporaryDirectory();
-        
-        fileSize += [XLEFileManagerTool folderSizeAtPath:tmpDir];
+        fileSize += [XLEFileManagerTool folderSizeAtPath:[XLEFileManagerTool cachesDir]];
+        fileSize += [XLEFileManagerTool folderSizeAtPath:[XLEFileManagerTool tmpDir]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // 更新界面

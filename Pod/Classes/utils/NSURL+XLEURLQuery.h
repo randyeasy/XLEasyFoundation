@@ -14,7 +14,7 @@
  *  @return URL's query component as keys/values
  *  Returns nil for an empty query
  */
-- (NSDictionary*) xle_queryDictionary;
+- (NSDictionary*)xle_queryDictionary;
 
 /**
  *  @return URL with keys values appending to query string
@@ -23,11 +23,11 @@
  *  @warning If keys overlap in receiver and query dictionary,
  *  behaviour is undefined.
  */
-- (NSURL*) xle_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary
+- (NSURL*)xle_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary
                              withSortedKeys:(BOOL) sortedKeys;
 
 /** As above, but `sortedKeys=NO` */
-- (NSURL*) xle_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary;
+- (NSURL*)xle_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary;
 
 @end
 
@@ -40,7 +40,7 @@
  *  components as key/value pairs. If couldn't split into *any* pairs,
  *  returns nil.
  */
-- (NSDictionary*) xle_URLQueryDictionary;
+- (NSDictionary*)xle_URLQueryDictionary;
 
 @end
 
@@ -54,9 +54,9 @@
  *  @param sortedKeys Sorted the keys alphabetically?
  *  @see cavetas from the main `NSURL` category as well.
  */
-- (NSString*) xle_URLQueryStringWithSortedKeys:(BOOL) sortedKeys;
+- (NSString*)xle_URLQueryStringWithSortedKeys:(BOOL) sortedKeys;
 
 /** As above, but `sortedKeys=NO` */
-- (NSString*) xle_URLQueryString;
+- (NSString*)xle_URLQueryString;
 
 @end

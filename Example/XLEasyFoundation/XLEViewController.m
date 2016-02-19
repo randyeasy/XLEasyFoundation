@@ -7,6 +7,7 @@
 //
 
 #import "XLEViewController.h"
+#import <XLEasyFoundation/XLEasyFoundation.h>
 
 @interface XLEViewController ()
 
@@ -18,6 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"deviceId %@",[UIDevice xle_uniqueGlobalDeviceIdentifier]);
 }
 
 - (void)didReceiveMemoryWarning

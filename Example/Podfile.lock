@@ -1,5 +1,18 @@
 PODS:
-  - XLEasyFoundation (0.1.0)
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
+  - Mantle (2.0.6):
+    - Mantle/extobjc (= 2.0.6)
+  - Mantle/extobjc (2.0.6)
+  - XLEasyFoundation (0.1.0):
+    - CocoaLumberjack (~> 2.2)
+    - Mantle (~> 2.0)
 
 DEPENDENCIES:
   - XLEasyFoundation (from `../`)
@@ -9,6 +22,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  XLEasyFoundation: 49b18178415094dd53691efcb5394d122c5789fd
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  Mantle: 299966b00759634931699f69cb6a30b9239b944d
+  XLEasyFoundation: ac81e1d337daf1f90f568d1dc98556bdfcf9e165
 
 COCOAPODS: 0.39.0

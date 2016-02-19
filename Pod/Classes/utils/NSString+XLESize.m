@@ -17,7 +17,12 @@
     CGSize labsize = CGSizeZero;
     NSString *strString = self;
     if ([[UIDevice currentDevice].systemVersion floatValue] < 7.0) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated"
+
         labsize = [strString sizeWithFont:font constrainedToSize:size lineBreakMode:lineMode];
+#pragma clang diagnostic pop
+
     }
     else
     {

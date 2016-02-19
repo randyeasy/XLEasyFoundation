@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CBE9AEF12E91C24CB382ACEA'
+               BlueprintIdentifier = 'A72E4F075CA3691DCDE51649'
                BlueprintName = 'XLEasyFoundation'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libXLEasyFoundation.a'>

@@ -40,6 +40,8 @@
 #import "UIDevice+XLE.h"
 
 #import "XLEModel.h"
+#import "XLEBlockItem.h"
+
 #import "XLELog.h"
 
 

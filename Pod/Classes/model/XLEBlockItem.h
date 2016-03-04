@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XLEBlockItem : XLEModel
 @property (copy, nonatomic) NSString *title;
-@property (strong, nonatomic) id<NSObject> item;
+@property (strong, nonatomic) id<NSObject> object;
 @property (copy, nonatomic) void(^handleBlock)();
 
 + (XLEBlockItem *)itemWithTitle:(NSString *)title
-                           item:(nullable id<NSObject>)item
-                       callback:(void(^)())callback;
+                           object:(nullable id<NSObject>)object
+                       callback:(nullable void(^)(id<NSObject> _Nullable object))callback;
 @end
 
 NS_ASSUME_NONNULL_END

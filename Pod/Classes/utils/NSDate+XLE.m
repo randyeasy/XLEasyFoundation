@@ -348,8 +348,6 @@
 	return [self xle_isSameDayAsDate:[NSDate xle_dateYesterday]];
 }
 
-
-
 - (BOOL)xle_isThisWeek
 {
 	return [self xle_isSameWeekAsDate:[NSDate date]];

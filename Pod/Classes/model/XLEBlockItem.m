@@ -11,12 +11,12 @@
 @implementation XLEBlockItem
 
 + (XLEBlockItem *)itemWithTitle:(NSString *)title
-                          item:(nullable id<NSObject>)item
-                     callback:(void(^)())callback;
+                          object:(nullable id<NSObject>)object
+                     callback:(nullable void(^)(id<NSObject> _Nullable object))callback;
 {
     XLEBlockItem *bockItem = [[XLEBlockItem alloc] init];
     bockItem.title  = title;
-    bockItem.item   = item;
+    bockItem.object   = object;
     bockItem.handleBlock = callback;
     return bockItem;
 }

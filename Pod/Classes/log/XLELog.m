@@ -136,14 +136,12 @@ int ddLogLevel = DDLogLevelVerbose;
 
 + (void)initLogger
 {
-    do {
-        // DDLog同一个logger可以加两次，所以先remove再add
-        [DDLog removeLogger:[DDASLLogger sharedInstance]];
-        [DDLog removeLogger:[DDTTYLogger sharedInstance]];
-        [DDLog addLogger:[DDASLLogger sharedInstance]];
-        [DDLog addLogger:[DDTTYLogger sharedInstance]];
-        [[self class] setDDLogLevel];
-    } while (0);
+    // DDLog同一个logger可以加两次，所以先remove再add
+    [DDLog removeLogger:[DDASLLogger sharedInstance]];
+    [DDLog removeLogger:[DDTTYLogger sharedInstance]];
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[self class] setDDLogLevel];
 }
 
 + (void)setDDLogLevel

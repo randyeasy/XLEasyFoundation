@@ -9,7 +9,18 @@
 
 
 #import "XLETimer.h"
+
+@interface XLETimer ()
+@property (nonatomic,strong)NSTimer* timer;
+
+@end
+
 @implementation XLETimer
+{
+    __weak id target;
+    SEL selector;
+    
+}
 
 -(void)time
 {

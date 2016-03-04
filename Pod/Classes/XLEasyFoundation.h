@@ -9,6 +9,8 @@
 #ifndef XLEasyFoundation_h
 #define XLEasyFoundation_h
 
+#import "XLEFoundationMacroUtils.h"
+
 #import "XLEError.h"
 
 #import "XLECacheManagerTool.h"

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "XLEasyFoundation"
-  s.version          = "0.1.2"
+  s.version          = "0.1.4"
   s.summary          = "封装基于iOS foundation的基础库."
 
 # This description is used to generate tags and improve search results.

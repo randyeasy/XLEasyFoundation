@@ -10,7 +10,7 @@
 
 @implementation NSString(XLEMD5)
 
-- (NSString *)xle_md5 {
+- (NSString *)XLE_md5 {
     
     if(self == nil || [self length] == 0)
         return nil;
@@ -28,7 +28,7 @@
     return outputString;
 }
 
-- (NSString *)xle_md5_32;
+- (NSString *)XLE_md5_32;
 {
     const char *cStr = [self UTF8String];
     unsigned char result[32];

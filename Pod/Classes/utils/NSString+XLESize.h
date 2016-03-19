@@ -10,6 +10,6 @@
 
 @interface NSString (XLESize)
 
-- (CGSize)xle_maxSizeWithConstrainedSize:(CGSize)size font:(UIFont *)font lineMode:(NSLineBreakMode)lineMode;
+- (CGSize)XLE_maxSizeWithConstrainedSize:(CGSize)size font:(UIFont *)font lineMode:(NSLineBreakMode)lineMode;
 
 @end

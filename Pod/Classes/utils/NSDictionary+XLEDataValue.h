@@ -9,31 +9,31 @@
 
 @interface NSDictionary (XLEDataValue)
 
-- (int)xle_intForKey:(NSString *)key;
-- (NSInteger)xle_integerForKey:(NSString *)key;
-- (long)xle_longForKey:(NSString *)key;
-- (long long)xle_longLongForKey:(NSString *)key;
-- (float)xle_floatForKey:(NSString *)key;
-- (double)xle_doubleForKey:(NSString *)key;
-- (BOOL)xle_boolForKey:(NSString *)key;
-- (NSString *)xle_stringForKey:(NSString *)key;
-- (NSArray *)xle_arrayForKey:(NSString *)key;
-- (NSDictionary *)xle_dictionaryForKey:(NSString *)key;
-- (NSDate *)xle_dateForKey:(NSString *)key;
-- (NSURL *)xle_urlForKey:(NSString *)key;
-- (NSDate *)xle_dateForKeyFromDateOrTime:(NSString *)key;
-- (NSURL *)xle_urlForKeyFromUrlOrString:(NSString *)key;
+- (int)XLE_intForKey:(NSString *)key;
+- (NSInteger)XLE_integerForKey:(NSString *)key;
+- (long)XLE_longForKey:(NSString *)key;
+- (long long)XLE_longLongForKey:(NSString *)key;
+- (float)XLE_floatForKey:(NSString *)key;
+- (double)XLE_doubleForKey:(NSString *)key;
+- (BOOL)XLE_boolForKey:(NSString *)key;
+- (NSString *)XLE_stringForKey:(NSString *)key;
+- (NSArray *)XLE_arrayForKey:(NSString *)key;
+- (NSDictionary *)XLE_dictionaryForKey:(NSString *)key;
+- (NSDate *)XLE_dateForKey:(NSString *)key;
+- (NSURL *)XLE_urlForKey:(NSString *)key;
+- (NSDate *)XLE_dateForKeyFromDateOrTime:(NSString *)key;
+- (NSURL *)XLE_urlForKeyFromUrlOrString:(NSString *)key;
 
-- (int)xle_intForKey:(NSString *)key defaultValue:(int)defaultValue;
-- (NSInteger)xle_integerForKey:(NSString *)key defaultValue:(NSInteger)defaultValue;
-- (long)xle_longForKey:(NSString *)key defaultValue:(long)defaultValue;
-- (long long)xle_longLongForKey:(NSString *)key defaultValue:(long long)defaultValue;
-- (float)xle_floatForKey:(NSString *)key defaultValue:(float)defaultValue;
-- (double)xle_doubleForKey:(NSString *)key defaultValue:(double)defaultValue;
-- (BOOL)xle_boolForKey:(NSString *)key defaultValue:(BOOL)defaultValue;
-- (NSString *)xle_stringForKey:(NSString *)key defaultValue:(NSString *)defaultValue;
-- (NSDate *)xle_dateForKey:(NSString *)key defaultValue:(NSDate *)defaultValue;
-- (NSURL *)xle_urlForKey:(NSString *)key defaultValue:(NSURL *)defaultValue;
-- (NSDate *)xle_dateForKeyFromDateOrTime:(NSString *)key defaultValue:(NSDate *)defaultValue;
-- (NSURL *)xle_urlForKeyFromUrlOrString:(NSString *)key defaultValue:(NSURL *)defaultValue;
+- (int)XLE_intForKey:(NSString *)key defaultValue:(int)defaultValue;
+- (NSInteger)XLE_integerForKey:(NSString *)key defaultValue:(NSInteger)defaultValue;
+- (long)XLE_longForKey:(NSString *)key defaultValue:(long)defaultValue;
+- (long long)XLE_longLongForKey:(NSString *)key defaultValue:(long long)defaultValue;
+- (float)XLE_floatForKey:(NSString *)key defaultValue:(float)defaultValue;
+- (double)XLE_doubleForKey:(NSString *)key defaultValue:(double)defaultValue;
+- (BOOL)XLE_boolForKey:(NSString *)key defaultValue:(BOOL)defaultValue;
+- (NSString *)XLE_stringForKey:(NSString *)key defaultValue:(NSString *)defaultValue;
+- (NSDate *)XLE_dateForKey:(NSString *)key defaultValue:(NSDate *)defaultValue;
+- (NSURL *)XLE_urlForKey:(NSString *)key defaultValue:(NSURL *)defaultValue;
+- (NSDate *)XLE_dateForKeyFromDateOrTime:(NSString *)key defaultValue:(NSDate *)defaultValue;
+- (NSURL *)XLE_urlForKeyFromUrlOrString:(NSString *)key defaultValue:(NSURL *)defaultValue;
 @end

@@ -19,9 +19,9 @@
 #import "XLEKeychain.h"
 #import "XLEKeychainQuery.h"
 
-#import "NSArray+HanZiLog.h"
+#import "NSArray+XLEHanZiLog.h"
 #import "NSArray+XLE.h"
-#import "NSDictionary+HanZiLog.h"
+#import "NSDictionary+XLEHanZiLog.h"
 #import "NSDictionary+XLEDataValue.h"
 
 #import "NSDate+XLE.h"
@@ -45,6 +45,8 @@
 #import "XLEBlockItem.h"
 
 #import "XLELog.h"
+
+#import "XLEAction.h"
 
 
 #endif /* XLEasyFoundation_h */

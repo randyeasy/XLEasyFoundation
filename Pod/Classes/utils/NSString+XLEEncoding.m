@@ -10,7 +10,7 @@
 
 @implementation NSString (XLEEncoding)
 
-- (NSString *)xle_urlEncodedString
+- (NSString *)XLE_urlEncodedString
 {
     __autoreleasing NSString *encodedString;
     NSString *originalString = (NSString *)self;
@@ -24,7 +24,7 @@
     return encodedString;
 }
 
-- (NSString *)xle_urlDecodedString
+- (NSString *)XLE_urlDecodedString
 {
     __autoreleasing NSString *decodedString;
     NSString *originalString = (NSString *)self;

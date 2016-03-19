@@ -12,4 +12,6 @@
 - (NSString *)XLE_stringByAppendUrlParam:(NSString *)value
                                   forKey:(NSString *)key;
 - (NSString *)XLE_stringByAppendUrlParams:(NSDictionary *)params;
+- (NSArray *)XLE_pathComponents;
+
 @end

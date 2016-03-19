@@ -6,6 +6,5 @@ end
 
 target 'XLEasyFoundation_Tests', :exclusive => true do
   pod "XLEasyFoundation", :path => "../"
-
   
 end

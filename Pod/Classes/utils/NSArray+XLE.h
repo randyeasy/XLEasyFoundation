@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 
 @interface NSArray (XLE)
-- (NSString *)xle_separateStringWithStr:(NSString *)str;
-- (id)xle_objectAtIndex:(NSUInteger)index;
-- (BOOL)xle_containsIndex:(NSUInteger)index;
-- (NSArray *)xle_arrayByRemoveObject:(id)object;
-- (NSArray *)xle_arrayByRemoveObjectsInArray:(NSArray *)array;
+- (NSString *)XLE_separateStringWithStr:(NSString *)str;
+- (id)XLE_objectAtIndex:(NSUInteger)index;
+- (BOOL)XLE_containsIndex:(NSUInteger)index;
+- (NSArray *)XLE_arrayByRemoveObject:(id)object;
+- (NSArray *)XLE_arrayByRemoveObjectsInArray:(NSArray *)array;
 @end
 
 @interface NSMutableArray (XLE)
 
-- (void)xle_addObjectNonNil:(id)object;
-- (void)xle_removeObjectAtIndex:(NSUInteger)index;
-- (void)xle_insertObjectNonNil:(id)anObject atIndex:(NSUInteger)index;
-- (BOOL)replaceObjectAtIndex:(NSUInteger)index withObjectNonNil:(id)anObject;
+- (void)XLE_addObjectNonNil:(id)object;
+- (void)XLE_removeObjectAtIndex:(NSUInteger)index;
+- (void)XLE_insertObjectNonNil:(id)anObject atIndex:(NSUInteger)index;
+- (BOOL)XLE_replaceObjectAtIndex:(NSUInteger)index withObjectNonNil:(id)anObject;
 
 @end

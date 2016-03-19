@@ -20,12 +20,12 @@
 
 #pragma mark -
 #pragma mark Public Methods
-+ (NSString *)xle_uniqueGlobalDeviceIdentifier{
-    return [UIDevice xle_getUUIDFromKeyChain];
++ (NSString *)XLE_uniqueGlobalDeviceIdentifier{
+    return [UIDevice XLE_getUUIDFromKeyChain];
 }
 
 //对应的 AppIdentifierPrefix
-+ (NSString *)xle_bundleSeedID {
++ (NSString *)XLE_bundleSeedID {
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
                            (__bridge id)(kSecClassGenericPassword), kSecClass,
                            @"bundleSeedID", kSecAttrAccount,
@@ -45,12 +45,12 @@
     return bundleSeedID;
 }
 
-+ (NSString *)xle_getUUIDFromKeyChain
++ (NSString *)XLE_getUUIDFromKeyChain
 {
     NSString *keyChainIdentifier = @"XLEUUID";
-    NSString *keyChainService = @"com.xle.xleasy";
+    NSString *keyChainService = @"com.XLE.XLEasy";
     
-    NSString *keyChainGroup = [NSString stringWithFormat:@"%@.family", [UIDevice xle_bundleSeedID] ];
+    NSString *keyChainGroup = [NSString stringWithFormat:@"%@.family", [UIDevice XLE_bundleSeedID] ];
     NSString *retrieveuuid = [XLEKeychain passwordForService:keyChainService account:keyChainIdentifier accessGroup:keyChainGroup];
     
     if (retrieveuuid==nil||[retrieveuuid isEqualToString:@""])
@@ -66,7 +66,7 @@
     }
 }
 
-+ (NSString *)xle_platformString
++ (NSString *)XLE_platformString
 {
     size_t size;
 	sysctlbyname("hw.machine", NULL, &size, NULL, 0);
@@ -77,7 +77,7 @@
     return platform;
 }
 
-+ (NSString* )xle_platformName
++ (NSString* )XLE_platformName
 {
     size_t size;
 	sysctlbyname("hw.machine", NULL, &size, NULL, 0);
@@ -152,7 +152,7 @@
     return @"unknow";
 }
 
-+ (BOOL)xle_isLowDevice
++ (BOOL)XLE_isLowDevice
 {
     size_t size;
 	sysctlbyname("hw.machine", NULL, &size, NULL, 0);
@@ -197,7 +197,7 @@
     return NO;
 }
 
-+ (BOOL)xle_iphone5Screen
++ (BOOL)XLE_iphone5Screen
 {
     //UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
@@ -211,30 +211,30 @@
     return NO;
 }
 
-+ (BOOL)xle_isSystemGreaterIOS5;
++ (BOOL)XLE_isSystemGreaterIOS5;
 {
     CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
     return version >= 5.0f;
 }
-+ (BOOL)xle_isSystemGreaterIOS6;
++ (BOOL)XLE_isSystemGreaterIOS6;
 {
     CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
     return version >= 6.0f;
 }
-+ (BOOL)xle_isSystemGreaterIOS7;
++ (BOOL)XLE_isSystemGreaterIOS7;
 {
     CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
     return version >= 7.0f;
 }
-+ (BOOL)xle_isSystemGreaterIOS8;
++ (BOOL)XLE_isSystemGreaterIOS8;
 {
     CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
     return version >= 8.0f;
 }
 
-+ (XLEDeviceFamily)xle_deviceFamily
++ (XLEDeviceFamily)XLE_deviceFamily
 {
-    NSString *modelIdentifier = [self xle_platformString];
+    NSString *modelIdentifier = [self XLE_platformString];
     if ([modelIdentifier hasPrefix:@"iPhone"] || [modelIdentifier hasPrefix:@"iPod"]) return XLE_DEVICE_IPHONE;
     if ([modelIdentifier hasPrefix:@"AppleWatch"]) return XLE_DEVICE_APPLEWATCH;
     if ([modelIdentifier hasPrefix:@"iPad"]) return XLE_DEVICE_IPAD;

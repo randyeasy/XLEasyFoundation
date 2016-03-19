@@ -11,7 +11,7 @@
 
 @implementation NSDateFormatter (XLE)
 
-+ (id)xle_dateFormatterWithFormat:(NSString *)dateFormat
++ (id)XLE_dateFormatterWithFormat:(NSString *)dateFormat
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -22,7 +22,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultDayDateFormatter
++ (id)XLE_defaultDayDateFormatter
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -33,7 +33,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultDayDateFormatter2
++ (id)XLE_defaultDayDateFormatter2
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -44,7 +44,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultDateFormatter
++ (id)XLE_defaultDateFormatter
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -55,7 +55,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultDateFormatter2
++ (id)XLE_defaultDateFormatter2
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -66,7 +66,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultMonthDateFormatter;//yyyy.MM
++ (id)XLE_defaultMonthDateFormatter;//yyyy.MM
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -77,7 +77,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultMonthDateFormatter2;//yyyy-MM
++ (id)XLE_defaultMonthDateFormatter2;//yyyy-MM
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -88,7 +88,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultMonthDayFormatter;//MM.dd
++ (id)XLE_defaultMonthDayFormatter;//MM.dd
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -99,7 +99,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultMonthDayFormatter2;//MM-dd
++ (id)XLE_defaultMonthDayFormatter2;//MM-dd
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -110,7 +110,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultMonthDayFormatter3;//MM月dd日
++ (id)XLE_defaultMonthDayFormatter3;//MM月dd日
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -121,7 +121,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultHourFormatter//dd
++ (id)XLE_defaultHourFormatter//dd
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;
@@ -132,7 +132,7 @@
     return dateFormatter;
 }
 
-+ (id)xle_defaultTimeFormatter;
++ (id)XLE_defaultTimeFormatter;
 {
     static NSDateFormatter *dateFormatter= nil;
     static dispatch_once_t predicate;

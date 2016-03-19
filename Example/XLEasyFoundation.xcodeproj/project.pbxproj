@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1369D03BDD5EC1C48699B989 /* libPods-XLEasyFoundation_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6BAB3C8C362E282F087F35 /* libPods-XLEasyFoundation_Example.a */; };
+		254E41E01C9C340B001BE2A1 /* XLEDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E41DF1C9C340B001BE2A1 /* XLEDemoViewController.m */; };
+		254E41E21C9CEFB7001BE2A1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254E41E11C9CEFB7001BE2A1 /* Launch Screen.storyboard */; };
 		258CC24F1C749A0500A8658A /* KeychainAccessGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 258CC24E1C749A0500A8658A /* KeychainAccessGroups.plist */; };
 		258FA411905D832B28BB8E46 /* libPods-XLEasyFoundation_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FDE9A1846F83BE46662FEE /* libPods-XLEasyFoundation_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -38,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		16764AC684C88F8FF4F609FD /* Pods-XLEasyFoundation_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLEasyFoundation_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XLEasyFoundation_Tests/Pods-XLEasyFoundation_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		254E41DE1C9C340B001BE2A1 /* XLEDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLEDemoViewController.h; sourceTree = "<group>"; };
+		254E41DF1C9C340B001BE2A1 /* XLEDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLEDemoViewController.m; sourceTree = "<group>"; };
+		254E41E11C9CEFB7001BE2A1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		258CC24E1C749A0500A8658A /* KeychainAccessGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeychainAccessGroups.plist; sourceTree = "<group>"; };
 		27CD65E6B66086534D70F20E /* Pods-XLEasyFoundation_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLEasyFoundation_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XLEasyFoundation_Tests/Pods-XLEasyFoundation_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		38FE91AC5154FA05D5589EDD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -137,8 +142,11 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* XLEViewController.h */,
 				6003F5A6195388D20070C39A /* XLEViewController.m */,
+				254E41DE1C9C340B001BE2A1 /* XLEDemoViewController.h */,
+				254E41DF1C9C340B001BE2A1 /* XLEDemoViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				254E41E11C9CEFB7001BE2A1 /* Launch Screen.storyboard */,
 			);
 			name = "Example for XLEasyFoundation";
 			path = XLEasyFoundation;
@@ -285,6 +293,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				258CC24F1C749A0500A8658A /* KeychainAccessGroups.plist in Resources */,
+				254E41E21C9CEFB7001BE2A1 /* Launch Screen.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +409,7 @@
 				6003F59E195388D20070C39A /* XLEAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* XLEViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				254E41E01C9C340B001BE2A1 /* XLEDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

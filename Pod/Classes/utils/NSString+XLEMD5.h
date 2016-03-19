@@ -9,7 +9,7 @@
 
 @interface NSString(XLEMD5)
 
-- (NSString *)xle_md5;
-- (NSString *)xle_md5_32;
+- (NSString *)XLE_md5;
+- (NSString *)XLE_md5_32;
 
 @end

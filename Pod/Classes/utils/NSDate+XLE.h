@@ -26,7 +26,7 @@
  *
  *  @return 显示的时间字符串
  */
-- (NSString *)xle_intervalNowDescription;
+- (NSString *)XLE_intervalNowDescription;
 
 /**
  *  精确到分钟的描述
@@ -37,7 +37,7 @@
  *
  *  @return 时间字符串
  */
-- (NSString *)xle_minuteDescription;
+- (NSString *)XLE_minuteDescription;
 
 /**
  *  标准时间日期描述 主要用于聊天、列表的时间显示
@@ -49,15 +49,15 @@
  *
  *  @return 时间字符串
  */
-- (NSString *)xle_formattedDateDescription;
-+ (NSString *)xle_formattedDescriptionFromTimeInterval:(long long)time;
+- (NSString *)XLE_formattedDateDescription;
++ (NSString *)XLE_formattedDescriptionFromTimeInterval:(long long)time;
 
 /**
  *  获取毫秒数
  *
  *  @return 毫秒数
  */
-- (double)xle_timeIntervalSince1970InMilliSecond;
+- (double)XLE_timeIntervalSince1970InMilliSecond;
 /**
  *  //根据毫秒生成NSDate
  *
@@ -65,32 +65,32 @@
  *
  *  @return NSDate
  */
-+ (NSDate *)xle_dateWithTimeIntervalInMilliSecondSince1970:(double)timeIntervalInMilliSecond;
++ (NSDate *)XLE_dateWithTimeIntervalInMilliSecondSince1970:(double)timeIntervalInMilliSecond;
 
 /**
  *  @"yyyy-MM-dd"
  *
  *  @return 天的时间格式化字符串
  */
-- (NSString *)xle_dayString;
+- (NSString *)XLE_dayString;
 /**
  *  yyyy-MM
  *
  *  @return 月的时间格式化字符串
  */
-- (NSString *)xle_monthString;
+- (NSString *)XLE_monthString;
 /**
  *  HH:mm
  *
  *  @return 时间格式化字符串
  */
-- (NSString *)xle_timeString;
+- (NSString *)XLE_timeString;
 /**
  *  yyyy-MM-dd HH:mm:ss
  *
  *  @return 标准的时间格式化字符串
  */
-- (NSString *)xle_dateString;
+- (NSString *)XLE_dateString;
 
 /**
  *  从现在开始的几天后
@@ -99,7 +99,7 @@
  *
  *  @return 几天后的日期
  */
-+ (NSDate *)xle_dateWithDaysAfterNow:(NSInteger) days;
++ (NSDate *)XLE_dateWithDaysAfterNow:(NSInteger) days;
 /**
  *  从现在开始的几天前
  *
@@ -107,7 +107,7 @@
  *
  *  @return 几天前的日期
  */
-+ (NSDate *)xle_dateWithDaysBeforeNow:(NSInteger) days;
++ (NSDate *)XLE_dateWithDaysBeforeNow:(NSInteger) days;
 /**
  *  从现在开始的几小时后
  *
@@ -115,7 +115,7 @@
  *
  *  @return 几小时后的日期
  */
-+ (NSDate *)xle_dateWithHoursFromNow:(NSInteger)dHours;
++ (NSDate *)XLE_dateWithHoursFromNow:(NSInteger)dHours;
 /**
  *  从现在开始的几小时前
  *
@@ -123,31 +123,31 @@
  *
  *  @return 几小时前的日期
  */
-+ (NSDate *)xle_dateWithHoursBeforeNow:(NSInteger)dHours;
++ (NSDate *)XLE_dateWithHoursBeforeNow:(NSInteger)dHours;
 /**
  *  明天的日期
  *
  *  @return 日期
  */
-+ (NSDate *)xle_dateTomorrow;
++ (NSDate *)XLE_dateTomorrow;
 /**
  *  昨天的日期
  *
  *  @return 日期
  */
-+ (NSDate *)xle_dateYesterday;
++ (NSDate *)XLE_dateYesterday;
 /**
  *  上个月的日期
  *
  *  @return 日期
  */
-- (NSDate *)xle_lastMonth;
+- (NSDate *)XLE_lastMonth;
 /**
  *  下个月的日期
  *
  *  @return 日期
  */
-- (NSDate *)xle_nextMonth;
+- (NSDate *)XLE_nextMonth;
 /**
  *  从接受的日期几天后的
  *
@@ -155,7 +155,7 @@
  *
  *  @return 几天后的日期
  */
-- (NSDate *)xle_nextDays:(NSInteger)days;
+- (NSDate *)XLE_nextDays:(NSInteger)days;
 /**
  *  从接受的日期几天前的
  *
@@ -163,74 +163,74 @@
  *
  *  @return 几天前的日期
  */
-- (NSDate *)xle_backDays:(NSInteger)days;
+- (NSDate *)XLE_backDays:(NSInteger)days;
 
 /**
  *  接受日期的开始时间，例如 2015-12-11 12:12:12 转变之后为2015-12-11 00:00:00
  *
  *  @return 日期
  */
-- (NSDate *)xle_beginOfDay;
+- (NSDate *)XLE_beginOfDay;
 /**
  *  接受日期的结束时间，例如 2015-12-11 12:12:12 转变之后为2015-12-11 59:59:59
  *
  *  @return 日期
  */
-- (NSDate *)xle_endOfDay;
-- (NSDate *)xle_beginOfWeek;
-- (NSDate *)xle_endOfWeek;
-- (NSDate *)xle_beginOfMonth;
-- (NSDate *)xle_endOfMonth;
+- (NSDate *)XLE_endOfDay;
+- (NSDate *)XLE_beginOfWeek;
+- (NSDate *)XLE_endOfWeek;
+- (NSDate *)XLE_beginOfMonth;
+- (NSDate *)XLE_endOfMonth;
 
-- (BOOL)xle_isAMPM;
-- (BOOL)xle_isSameDayAsDate:(NSDate *)aDate;
-- (BOOL)xle_isSameWeekAsDate:(NSDate *) aDate;
-- (BOOL)xle_isSameYearAsDate:(NSDate *)aDate;
-- (BOOL)xle_isSameMonthAsDate:(NSDate *)aDate;
-- (BOOL)xle_isToday;
-- (BOOL)xle_isTomorrow;
-- (BOOL)xle_isYesterday;
-- (BOOL)xle_isThisWeek;
-- (BOOL)xle_isNextWeek;
-- (BOOL)xle_isLastWeek;
-- (BOOL)xle_isThisMonth;
-- (BOOL)xle_isThisYear;
-- (BOOL)xle_isNextYear;
-- (BOOL)xle_isLastYear;
+- (BOOL)XLE_isAMPM;
+- (BOOL)XLE_isSameDayAsDate:(NSDate *)aDate;
+- (BOOL)XLE_isSameWeekAsDate:(NSDate *) aDate;
+- (BOOL)XLE_isSameYearAsDate:(NSDate *)aDate;
+- (BOOL)XLE_isSameMonthAsDate:(NSDate *)aDate;
+- (BOOL)XLE_isToday;
+- (BOOL)XLE_isTomorrow;
+- (BOOL)XLE_isYesterday;
+- (BOOL)XLE_isThisWeek;
+- (BOOL)XLE_isNextWeek;
+- (BOOL)XLE_isLastWeek;
+- (BOOL)XLE_isThisMonth;
+- (BOOL)XLE_isThisYear;
+- (BOOL)XLE_isNextYear;
+- (BOOL)XLE_isLastYear;
 /**
  *  是否是周末
  *
  *  @return 是周末：YES
  */
-- (BOOL)xle_isWeekend;
+- (BOOL)XLE_isWeekend;
 /**
  *  是否是工作日
  *
  *  @return 是工作日：YES
  */
-- (BOOL)xle_isWorkday;
+- (BOOL)XLE_isWorkday;
 
-- (NSInteger)xle_minutesAfterDate:(NSDate *)aDate;
-- (NSInteger)xle_minutesBeforeDate:(NSDate *)aDate;
-- (NSInteger)xle_hoursAfterDate:(NSDate *)aDate;
-- (NSInteger)xle_hoursBeforeDate:(NSDate *)aDate;
-- (NSInteger)xle_daysAfterDate:(NSDate *)aDate;
-- (NSInteger)xle_daysBeforeDate:(NSDate *)aDate;
-- (NSInteger)xle_distanceDaysToDate:(NSDate *)anotherDate;
+- (NSInteger)XLE_minutesAfterDate:(NSDate *)aDate;
+- (NSInteger)XLE_minutesBeforeDate:(NSDate *)aDate;
+- (NSInteger)XLE_hoursAfterDate:(NSDate *)aDate;
+- (NSInteger)XLE_hoursBeforeDate:(NSDate *)aDate;
+- (NSInteger)XLE_daysAfterDate:(NSDate *)aDate;
+- (NSInteger)XLE_daysBeforeDate:(NSDate *)aDate;
+- (NSInteger)XLE_distanceDaysToDate:(NSDate *)anotherDate;
 
 /**
  *  离的最近的小时，05:10 返回5  05：40返回6
  */
-- (NSInteger)xle_nearestHour;
-- (NSInteger)xle_hour;
-- (NSInteger)xle_minute;
-- (NSInteger)xle_seconds;
-- (NSInteger)xle_day;
-- (NSInteger)xle_month;
-- (NSInteger)xle_year;
+- (NSInteger)XLE_nearestHour;
+- (NSInteger)XLE_hour;
+- (NSInteger)XLE_minute;
+- (NSInteger)XLE_seconds;
+- (NSInteger)XLE_day;
+- (NSInteger)XLE_month;
+- (NSInteger)XLE_year;
 /**
  *  在一星期的第几天 周一：1 周日：7
  */
-- (NSInteger)xle_weekday;
+- (NSInteger)XLE_weekday;
 
 @end

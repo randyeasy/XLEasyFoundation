@@ -10,7 +10,7 @@
 
 #import "NSURL+XLEURLQuery.h"
 
-NSString *const xle_URLReservedChars     = @"￼=,!$&'()*+;@?\r\n\"<>#\t :/";
+NSString *const XLE_URLReservedChars     = @"￼=,!$&'()*+;@?\r\n\"<>#\t :/";
 static NSString *const kQuerySeparator  = @"&";
 static NSString *const kQueryDivider    = @"=";
 static NSString *const kQueryBegin      = @"?";
@@ -18,19 +18,19 @@ static NSString *const kFragmentBegin   = @"#";
 
 @implementation NSURL (XLEURLQuery)
 
-- (NSDictionary*) xle_queryDictionary {
-  return self.query.xle_URLQueryDictionary;
+- (NSDictionary*) XLE_queryDictionary {
+  return self.query.XLE_URLQueryDictionary;
 }
 
-- (NSURL*) xle_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary {
-  return [self xle_URLByAppendingQueryDictionary:queryDictionary withSortedKeys:NO];
+- (NSURL*) XLE_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary {
+  return [self XLE_URLByAppendingQueryDictionary:queryDictionary withSortedKeys:NO];
 }
 
-- (NSURL *)xle_URLByAppendingQueryDictionary:(NSDictionary *)queryDictionary
+- (NSURL *)XLE_URLByAppendingQueryDictionary:(NSDictionary *)queryDictionary
                           withSortedKeys:(BOOL)sortedKeys
 {
   NSMutableArray *queries = [self.query length] > 0 ? @[self.query].mutableCopy : @[].mutableCopy;
-  NSString *dictionaryQuery = [queryDictionary xle_URLQueryStringWithSortedKeys:sortedKeys];
+  NSString *dictionaryQuery = [queryDictionary XLE_URLQueryStringWithSortedKeys:sortedKeys];
   if (dictionaryQuery) {
     [queries addObject:dictionaryQuery];
   }
@@ -58,13 +58,25 @@ static NSString *const kFragmentBegin   = @"#";
   return self;
 }
 
+- (NSArray *)XLE_pathComponents;
+{
+    NSArray *paths = [self pathComponents];
+    NSMutableArray *mutPaths = [paths mutableCopy];
+    for (NSString *onePath in paths) {
+        if ([onePath isEqualToString:@"/"]) {
+            [mutPaths removeObject:onePath];
+        }
+    }
+    return [mutPaths copy];
+}
+
 @end
 
 #pragma mark -
 
 @implementation NSString (URLQuery)
 
-- (NSDictionary*) xle_URLQueryDictionary {
+- (NSDictionary*) XLE_URLQueryDictionary {
   NSMutableDictionary *mute = @{}.mutableCopy;
   for (NSString *query in [self componentsSeparatedByString:kQuerySeparator]) {
     NSArray *components = [query componentsSeparatedByString:kQueryDivider];
@@ -97,13 +109,13 @@ static NSString *const kFragmentBegin   = @"#";
 
 @implementation NSDictionary (URLQuery)
 
-static inline NSString *xle_URLEscape(NSString *string);
+static inline NSString *XLE_URLEscape(NSString *string);
 
-- (NSString *)xle_URLQueryString {
-  return [self xle_URLQueryStringWithSortedKeys:NO];
+- (NSString *)XLE_URLQueryString {
+  return [self XLE_URLQueryStringWithSortedKeys:NO];
 }
 
-- (NSString*) xle_URLQueryStringWithSortedKeys:(BOOL)sortedKeys {
+- (NSString*) XLE_URLQueryStringWithSortedKeys:(BOOL)sortedKeys {
   NSMutableString *queryString = @"".mutableCopy;
   NSArray *keys = sortedKeys ? [self.allKeys sortedArrayUsingSelector:@selector(compare:)] : self.allKeys;
   for (NSString *key in keys) {
@@ -111,23 +123,23 @@ static inline NSString *xle_URLEscape(NSString *string);
     NSString *value = nil;
     // beware of empty or null
     if (!(rawValue == [NSNull null] || ![rawValue description].length)) {
-      value = xle_URLEscape([self[key] description]);
+      value = XLE_URLEscape([self[key] description]);
     }
     [queryString appendFormat:@"%@%@%@%@",
      queryString.length ? kQuerySeparator : @"",    // appending?
-     xle_URLEscape(key),
+     XLE_URLEscape(key),
      value ? kQueryDivider : @"",
      value ? value : @""];
   }
   return queryString.length ? queryString.copy : nil;
 }
 
-static inline NSString *xle_URLEscape(NSString *string) {
+static inline NSString *XLE_URLEscape(NSString *string) {
     return ((__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(
         NULL,
         (__bridge CFStringRef)string,
         NULL,
-        (__bridge CFStringRef)xle_URLReservedChars,
+        (__bridge CFStringRef)XLE_URLReservedChars,
         kCFStringEncodingUTF8));
 }
 

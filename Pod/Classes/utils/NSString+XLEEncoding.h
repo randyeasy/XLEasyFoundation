@@ -10,7 +10,7 @@
 
 @interface NSString (XLEEncoding)
 
-- (NSString *)xle_urlEncodedString;
-- (NSString *)xle_urlDecodedString;
+- (NSString *)XLE_urlEncodedString;
+- (NSString *)XLE_urlDecodedString;
 
 @end

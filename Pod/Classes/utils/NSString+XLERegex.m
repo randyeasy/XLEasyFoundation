@@ -17,7 +17,7 @@
  *
  *  @return 符合：YES，不符合：NO
  */
-- (BOOL)xle_evaluateWithRegex:(NSString *)aStr
+- (BOOL)XLE_evaluateWithRegex:(NSString *)aStr
 {
     NSString *regex = aStr;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
@@ -30,9 +30,9 @@
  *
  *  @return 合法：YES
  */
-- (BOOL)xle_isLegalOwnerId;
+- (BOOL)XLE_isLegalOwnerId;
 {
-    return [self xle_evaluateWithRegex:@"^[0-9]{14,17}[A-Za-z0-9]$"];
+    return [self XLE_evaluateWithRegex:@"^[0-9]{14,17}[A-Za-z0-9]$"];
 }
 
 /**
@@ -42,12 +42,12 @@
  *
  *  @return 重复：YES count小于2：NO
  */
-- (BOOL)xle_isRepeatNum:(NSInteger)count;
+- (BOOL)XLE_isRepeatNum:(NSInteger)count;
 {
     if (count<2) {
         return NO;
     }
-    return [self xle_evaluateWithRegex:[NSString stringWithFormat:@"[0-9]*?(\\d)\\1{%ld}[0-9]*?",(long)(count-1)]];
+    return [self XLE_evaluateWithRegex:[NSString stringWithFormat:@"[0-9]*?(\\d)\\1{%ld}[0-9]*?",(long)(count-1)]];
 }
 
 /**
@@ -55,9 +55,9 @@
  *
  *  @return 是：YES
  */
-- (BOOL)xle_isOnlyNumber
+- (BOOL)XLE_isOnlyNumber
 {
-    return [self xle_evaluateWithRegex:@"^[0-9]+$"];
+    return [self XLE_evaluateWithRegex:@"^[0-9]+$"];
 }
 
 /**
@@ -65,9 +65,9 @@
  *
  *  @return 是：YES
  */
-- (BOOL)xle_isLegalEmail;
+- (BOOL)XLE_isLegalEmail;
 {
-    return [self xle_evaluateWithRegex:@"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$"];
+    return [self XLE_evaluateWithRegex:@"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$"];
 }
 
 /**
@@ -75,9 +75,9 @@
  *
  *  @return 是：YES
  */
-- (BOOL)xle_isLegalMobile;
+- (BOOL)XLE_isLegalMobile;
 {
-    return [self xle_evaluateWithRegex:@"^1[0-9]{10}$"];
+    return [self XLE_evaluateWithRegex:@"^1[0-9]{10}$"];
 }
 
 /**
@@ -85,10 +85,10 @@
  *
  *  @return 是：YES
  */
-- (BOOL)xle_isLegalURL;
+- (BOOL)XLE_isLegalURL;
 {
     NSString *match=@"((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?";
-    return [self xle_evaluateWithRegex:match];
+    return [self XLE_evaluateWithRegex:match];
 }
 
 /**
@@ -96,9 +96,9 @@
  *
  *  @return 是：YES
  */
-- (BOOL)xle_isChinese;
+- (BOOL)XLE_isChinese;
 {
-    return [self xle_evaluateWithRegex:@"(^[\u4e00-\u9fa5]+$)"];
+    return [self XLE_evaluateWithRegex:@"(^[\u4e00-\u9fa5]+$)"];
 }
 
 /**
@@ -106,7 +106,7 @@
  *
  *  @return 包含：YES
  */
-- (BOOL)xle_hasEmoji;
+- (BOOL)XLE_hasEmoji;
 {
     __block BOOL returnValue = NO;
     [self enumerateSubstringsInRange:NSMakeRange(0, [self length])
@@ -148,9 +148,9 @@
  *
  *  @return 是：YES
  */
-- (BOOL)xle_isOnlyLetter;
+- (BOOL)XLE_isOnlyLetter;
 {
-    return [self xle_evaluateWithRegex:@"^[A-Za-z]+$"];
+    return [self XLE_evaluateWithRegex:@"^[A-Za-z]+$"];
 }
 
 @end

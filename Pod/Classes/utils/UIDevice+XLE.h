@@ -26,31 +26,31 @@ typedef NS_ENUM(NSInteger, XLEDeviceFamily) {
  * It generates a hash from the MAC-address only.
  */
 
-+ (NSString *)xle_uniqueGlobalDeviceIdentifier;
++ (NSString *)XLE_uniqueGlobalDeviceIdentifier;
 
 
 //获得设备的识别码如"iPhone1,1"，"iPhone1,2"
-+ (NSString *)xle_platformString;
++ (NSString *)XLE_platformString;
 
 
 //获得设备的名称，如"iPhone 5(AT&T)"，"iPad Mini (CDMA)"等
-+ (NSString* )xle_platformName;
++ (NSString* )XLE_platformName;
 
-+ (NSString *)xle_bundleSeedID;
++ (NSString *)XLE_bundleSeedID;
 
 
 //是否是性能较差的设备
-+ (BOOL)xle_isLowDevice;
++ (BOOL)XLE_isLowDevice;
 
 //是否是iphone5的屏幕尺寸
-+ (BOOL)xle_iphone5Screen;
++ (BOOL)XLE_iphone5Screen;
 
 //iOS5及以上
-+ (BOOL)xle_isSystemGreaterIOS5;
-+ (BOOL)xle_isSystemGreaterIOS6;
-+ (BOOL)xle_isSystemGreaterIOS7;
-+ (BOOL)xle_isSystemGreaterIOS8;
++ (BOOL)XLE_isSystemGreaterIOS5;
++ (BOOL)XLE_isSystemGreaterIOS6;
++ (BOOL)XLE_isSystemGreaterIOS7;
++ (BOOL)XLE_isSystemGreaterIOS8;
 
-+ (XLEDeviceFamily)xle_deviceFamily;
++ (XLEDeviceFamily)XLE_deviceFamily;
 
 @end

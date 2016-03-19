@@ -10,7 +10,7 @@
 
 @implementation XLEJSONUtils
 
-+ (NSData *)xle_jsonToData:(id)json
++ (NSData *)XLE_jsonToData:(id)json
 {
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&error];
@@ -20,9 +20,9 @@
 }
 
 
-+ (NSString *)xle_jsonToString:(id)json
++ (NSString *)XLE_jsonToString:(id)json
 {
-    NSData *data = [XLEJSONUtils xle_jsonToData:json];
+    NSData *data = [XLEJSONUtils XLE_jsonToData:json];
     if (data)
     {
         return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -30,7 +30,7 @@
     return nil;
 }
 
-- (id)xle_stringToJson:(NSString *)string;
+- (id)XLE_stringToJson:(NSString *)string;
 {
     NSData* data = [string dataUsingEncoding:NSUTF8StringEncoding];
     __autoreleasing NSError* error = nil;
@@ -42,7 +42,7 @@
     return result;
 }
 
-- (id)xle_dataToJson:(NSData *)data;
+- (id)XLE_dataToJson:(NSData *)data;
 {
     __autoreleasing NSError* error = nil;
     id result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];

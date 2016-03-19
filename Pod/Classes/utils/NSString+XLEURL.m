@@ -38,4 +38,16 @@
     return url;
 }
 
+- (NSArray *)XLE_pathComponents;
+{
+    NSArray *paths = [self pathComponents];
+    NSMutableArray *mutPaths = [paths mutableCopy];
+    for (NSString *onePath in paths) {
+        if ([onePath isEqualToString:@"/"]) {
+            [mutPaths removeObject:onePath];
+        }
+    }
+    return [mutPaths copy];
+}
+
 @end

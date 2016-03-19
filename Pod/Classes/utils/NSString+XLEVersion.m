@@ -10,7 +10,7 @@
 
 @implementation NSString (XLEVersion)
 
--(NSComparisonResult)xle_compareToVersion:(NSString *)version{
+-(NSComparisonResult)XLE_compareToVersion:(NSString *)version{
     NSComparisonResult result;
     
     result = NSOrderedSame;
@@ -39,24 +39,24 @@
 }
 
 
--(BOOL)xle_isOlderThanVersion:(NSString *)version{
-    return ([self xle_compareToVersion:version] == NSOrderedAscending);
+-(BOOL)XLE_isOlderThanVersion:(NSString *)version{
+    return ([self XLE_compareToVersion:version] == NSOrderedAscending);
 }
 
--(BOOL)xle_isNewerThanVersion:(NSString *)version{
-    return ([self xle_compareToVersion:version] == NSOrderedDescending);
+-(BOOL)XLE_isNewerThanVersion:(NSString *)version{
+    return ([self XLE_compareToVersion:version] == NSOrderedDescending);
 }
 
--(BOOL)xle_isEqualToVersion:(NSString *)version{
-    return ([self xle_compareToVersion:version] == NSOrderedSame);
+-(BOOL)XLE_isEqualToVersion:(NSString *)version{
+    return ([self XLE_compareToVersion:version] == NSOrderedSame);
 }
 
--(BOOL)xle_isEqualOrOlderThanVersion:(NSString *)version{
-    return ([self xle_compareToVersion:version] != NSOrderedDescending);
+-(BOOL)XLE_isEqualOrOlderThanVersion:(NSString *)version{
+    return ([self XLE_compareToVersion:version] != NSOrderedDescending);
 }
 
--(BOOL)xle_isEqualOrNewerThanVersion:(NSString *)version{
-    return ([self xle_compareToVersion:version] != NSOrderedAscending);
+-(BOOL)XLE_isEqualOrNewerThanVersion:(NSString *)version{
+    return ([self XLE_compareToVersion:version] != NSOrderedAscending);
 }
 
 @end

@@ -1,15 +1,15 @@
 //
-//  NSArray+HanZiLog.m
+//  NSArray+XLEHanZiLog.m
 //  Pods
 //
 //  Created by Randy on 14/11/3.
 //
 
-#import "NSArray+HanZiLog.h"
+#import "NSArray+XLEHanZiLog.h"
 
-@implementation NSArray (HanZiLog)
+@implementation NSArray (XLEHanZiLog)
 
-- (NSString *)xle_hanZiLogStrWithIndent:(NSInteger)level
+- (NSString *)XLE_hanZiLogStrWithIndent:(NSInteger)level
 {
     NSString *spaceStr = @"\t";
     NSMutableString *levelStr = [NSMutableString stringWithString:@""];
@@ -25,7 +25,7 @@
         }
         if ([obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSDictionary class]]) {
 
-            [str appendFormat:@"%@%@%@%@",levelStr,spaceStr,[obj xle_hanZiLogStrWithIndent:level],enterLineStr];
+            [str appendFormat:@"%@%@%@%@",levelStr,spaceStr,[obj XLE_hanZiLogStrWithIndent:level],enterLineStr];
         }
         else
             [str appendFormat:@"%@%@%@%@",levelStr,spaceStr, obj,enterLineStr];
@@ -36,8 +36,8 @@
     return str;
 }
 
-- (NSString *)xle_hanZiLogStr
+- (NSString *)XLE_hanZiLogStr
 {
-    return [self xle_hanZiLogStrWithIndent:0];
+    return [self XLE_hanZiLogStrWithIndent:0];
 }
 @end

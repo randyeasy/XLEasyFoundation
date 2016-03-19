@@ -9,7 +9,7 @@
 #import "NSArray+XLE.h"
 
 @implementation NSArray (XLE)
-- (NSString *)xle_separateStringWithStr:(NSString *)str;
+- (NSString *)XLE_separateStringWithStr:(NSString *)str;
 {
     NSString *sepStr = str;
     if (sepStr == nil) {
@@ -38,7 +38,7 @@
     return mutStr;
 }
 
-- (id)xle_objectAtIndex:(NSUInteger)index;
+- (id)XLE_objectAtIndex:(NSUInteger)index;
 {
     if (index >= [self count]) {
         NSAssert2(0, @"越界了 index:%lu, count:%lu", (unsigned long)index, (unsigned long)[self count]);
@@ -47,18 +47,18 @@
     return [self objectAtIndex:index];
 }
 
-- (BOOL)xle_containsIndex:(NSUInteger)index {
+- (BOOL)XLE_containsIndex:(NSUInteger)index {
     return index < [self count];
 }
 
-- (NSArray *)xle_arrayByRemoveObject:(id)object;
+- (NSArray *)XLE_arrayByRemoveObject:(id)object;
 {
     NSMutableArray *array = [NSMutableArray arrayWithArray:self];
     [array removeObject:object];
     return [array copy];
 }
 
-- (NSArray *)xle_arrayByRemoveObjectsInArray:(NSArray *)otherArray;
+- (NSArray *)XLE_arrayByRemoveObjectsInArray:(NSArray *)otherArray;
 {
     NSMutableArray *array = [NSMutableArray arrayWithArray:self];
     [array removeObjectsInArray:otherArray];
@@ -69,14 +69,14 @@
 
 @implementation NSMutableArray (XLE)
 
-- (void)xle_addObjectNonNil:(id)object
+- (void)XLE_addObjectNonNil:(id)object
 {
     if (object) {
         [self addObject:object];
     }
 }
 
-- (void)xle_removeObjectAtIndex:(NSUInteger)index{
+- (void)XLE_removeObjectAtIndex:(NSUInteger)index{
     if (index >= [self count]) {
         return;
     }else{
@@ -84,7 +84,7 @@
     }
 }
 
-- (void)xle_insertObjectNonNil:(id)anObject atIndex:(NSUInteger)index{
+- (void)XLE_insertObjectNonNil:(id)anObject atIndex:(NSUInteger)index{
     if (anObject && index > [self count]) {
         return;
     }
@@ -93,7 +93,7 @@
     }
 }
 
-- (BOOL)replaceObjectAtIndex:(NSUInteger)index withObjectNonNil:(id)anObject {
+- (BOOL)XLE_replaceObjectAtIndex:(NSUInteger)index withObjectNonNil:(id)anObject {
     if (anObject && index < [self count]) {
         [self replaceObjectAtIndex:index withObject:anObject];
         return YES;

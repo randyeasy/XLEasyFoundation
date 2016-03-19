@@ -48,7 +48,7 @@ const int XLE_ERROR_PLATFORM    = 2;
         NSString *subsystem = [fullCode substringWithRange:NSMakeRange(fullCode.length - XLE_ERROR_SUBSYSTEM, XLE_ERROR_SUBSYSTEM)];
         fullCode = [fullCode substringToIndex:fullCode.length - XLE_ERROR_SUBSYSTEM];
         NSString *env = [fullCode substringWithRange:NSMakeRange(fullCode.length - XLE_ERROR_ENVIRONMENT, XLE_ERROR_ENVIRONMENT)];
-        return [self errorWithEnvironment:[env xle_int16Value] subsystem:[subsystem xle_int16Value] platform:[platform xle_int16Value] code:[code xle_int16Value] reason:reason];
+        return [self errorWithEnvironment:[env XLE_int16Value] subsystem:[subsystem XLE_int16Value] platform:[platform XLE_int16Value] code:[code XLE_int16Value] reason:reason];
     }
     return nil;
 }
@@ -104,7 +104,7 @@ const int XLE_ERROR_PLATFORM    = 2;
 + (XLEErrorEnvironmentType)environmentType
 {
     XLEErrorEnvironmentType environment = XLE_ENVIRONMENT_UNKOWN;
-    switch ([UIDevice xle_deviceFamily]) {
+    switch ([UIDevice XLE_deviceFamily]) {
         case XLE_DEVICE_UNKONW: {
             environment = XLE_ENVIRONMENT_UNKOWN;
             break;
@@ -135,10 +135,10 @@ const int XLE_ERROR_PLATFORM    = 2;
 }
 
 - (NSString *)fullCode{
-    NSString *environment = [NSString xle_fillZero:self.environment toEnoughBit:XLE_ERROR_ENVIRONMENT];
-    NSString *subsystem = [NSString xle_fillZero:self.subsystem toEnoughBit:XLE_ERROR_SUBSYSTEM];
-    NSString *platform = [NSString xle_fillZero:self.platform toEnoughBit:XLE_ERROR_PLATFORM];
-    NSString *code = [NSString xle_fillZero:self.code toEnoughBit:XLE_ERROR_CODE];
+    NSString *environment = [NSString XLE_fillZero:self.environment toEnoughBit:XLE_ERROR_ENVIRONMENT];
+    NSString *subsystem = [NSString XLE_fillZero:self.subsystem toEnoughBit:XLE_ERROR_SUBSYSTEM];
+    NSString *platform = [NSString XLE_fillZero:self.platform toEnoughBit:XLE_ERROR_PLATFORM];
+    NSString *code = [NSString XLE_fillZero:self.code toEnoughBit:XLE_ERROR_CODE];
     return [NSString stringWithFormat:@"%@%@%@%@",environment,subsystem,platform,code];
 }
 

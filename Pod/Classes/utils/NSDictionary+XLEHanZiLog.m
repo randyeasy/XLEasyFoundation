@@ -1,14 +1,14 @@
 //
-//  NSDictionary+HanZiLog.m
+//  NSDictionary+XLEHanZiLog.m
 //  Pods
 //
 //  Created by Randy on 15/1/26.
 //
 
-#import "NSDictionary+HanZiLog.h"
+#import "NSDictionary+XLEHanZiLog.h"
 
-@implementation NSDictionary (HanZiLog)
-- (NSString *)xle_hanZiLogStrWithIndent:(NSInteger)level
+@implementation NSDictionary (XLEHanZiLog)
+- (NSString *)XLE_hanZiLogStrWithIndent:(NSInteger)level
 {
     NSString *spaceStr = @"\t";
     NSMutableString *levelStr = [NSMutableString stringWithString:@""];
@@ -25,7 +25,7 @@
             enterLineStr = @"\n";
         }
         if ([objValue isKindOfClass:[NSArray class]] || [objValue isKindOfClass:[NSDictionary class]]) {
-            [str appendFormat:@"%@%@\"%@\":%@%@",levelStr,spaceStr,obj,[objValue xle_hanZiLogStrWithIndent:level],enterLineStr];
+            [str appendFormat:@"%@%@\"%@\":%@%@",levelStr,spaceStr,obj,[objValue XLE_hanZiLogStrWithIndent:level],enterLineStr];
         }
         else
         {
@@ -42,9 +42,9 @@
     return str;
 }
 
-- (NSString *)xle_hanZiLogStr
+- (NSString *)XLE_hanZiLogStr
 {
-    return [self xle_hanZiLogStrWithIndent:0];
+    return [self XLE_hanZiLogStrWithIndent:0];
 }
 
 @end

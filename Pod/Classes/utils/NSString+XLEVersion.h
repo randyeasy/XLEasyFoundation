@@ -10,10 +10,10 @@
 
 @interface NSString (XLEVersion)
 
--(BOOL)xle_isOlderThanVersion:(NSString *)version;
--(BOOL)xle_isNewerThanVersion:(NSString *)version;
--(BOOL)xle_isEqualToVersion:(NSString *)version;
--(BOOL)xle_isEqualOrOlderThanVersion:(NSString *)version;
--(BOOL)xle_isEqualOrNewerThanVersion:(NSString *)version;
+-(BOOL)XLE_isOlderThanVersion:(NSString *)version;
+-(BOOL)XLE_isNewerThanVersion:(NSString *)version;
+-(BOOL)XLE_isEqualToVersion:(NSString *)version;
+-(BOOL)XLE_isEqualOrOlderThanVersion:(NSString *)version;
+-(BOOL)XLE_isEqualOrNewerThanVersion:(NSString *)version;
 
 @end

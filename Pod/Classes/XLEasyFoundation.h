@@ -47,6 +47,5 @@
 #import "XLELog.h"
 
 #import "XLEAction.h"
-#import "XLEActionManager.h"
 
 #endif /* XLEasyFoundation_h */

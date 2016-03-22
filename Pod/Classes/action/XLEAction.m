@@ -7,7 +7,6 @@
 //
 
 #import "XLEAction.h"
-#import "XLEActionModel.h"
 
 @interface XLEAction ()
 @property (copy, nonatomic) NSString *scheme;
@@ -46,19 +45,14 @@
     [self.listeners removeObjectForKey:name];
 }
 
-- (BOOL)handleOpenUrl:(NSString *)url
-          withPayload:(NSDictionary *)payload
-              context:(nullable XLEActionContext *)context
-             callback:(nullable XLEActionHandlerCallback)callback;
+- (BOOL)sendActionWithName:(NSString *)name
+                   payload:(NSDictionary *)payload
+                   context:(nullable XLEActionContext *)context
+                  callback:(nullable XLEActionHandlerCallback)callback;
 {
-    XLEActionModel *actionModel = [[XLEActionModel alloc] initWithUrl:[NSURL URLWithString:url]];
-    if ([self.scheme isEqualToString:actionModel.scheme] && [self.host isEqualToString:actionModel.host]) {
-        if (!self.subPath || [self.subPath isEqualToString:actionModel.subPath]) {
-            XLEActionHandler handler = [self.listeners objectForKey:actionModel.name];
-            if (handler) {
-                return handler(context,payload,callback);
-            }
-        }
+    XLEActionHandler handler = [self.listeners objectForKey:name];
+    if (handler) {
+        return handler(context,payload,callback);
     }
     return NO;
 }

@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^ XLEActionHandlerCallback)(NSDictionary *callbackPayload);
-typedef BOOL (^ XLEActionHandler)(XLEActionContext *_Nullable context,NSDictionary *payload, XLEActionHandlerCallback _Nullable callback);
+typedef void (^ XLEActionHandlerCallback)(NSDictionary *_Nullable callbackPayload);
+typedef BOOL (^ XLEActionHandler)(XLEActionContext *_Nullable context,NSDictionary *_Nullable payload, XLEActionHandlerCallback _Nullable callback);
 
 
 @interface XLEAction : NSObject
@@ -34,8 +34,8 @@ typedef BOOL (^ XLEActionHandler)(XLEActionContext *_Nullable context,NSDictiona
                      handle:(XLEActionHandler)handler;
 - (void)removeListenerWithName:(NSString *)name;
 
-- (BOOL)handleOpenUrl:(NSString *)url
-          withPayload:(NSDictionary *)payload
+- (BOOL)sendActionWithName:(NSString *)name
+          payload:(NSDictionary *)payload
                  context:(nullable XLEActionContext *)context
              callback:(nullable XLEActionHandlerCallback)callback;
 

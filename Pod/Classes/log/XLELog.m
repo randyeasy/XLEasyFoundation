@@ -1,9 +1,8 @@
 //
 //  XLELog.m
-//  BJEducation
+//  Pods
 //
 //  Created by heyingj on 10/30/15.
-//  Copyright (c) 2015 com.bjhl. All rights reserved.
 //
 
 #import "XLELog.h"
@@ -12,7 +11,7 @@
 @implementation XLELog
 
 static int gXLELogLevel = XLE_LOG_LEVEL_WARN;
-int ddLogLevel = DDLogLevelVerbose;
+static int ddLogLevel = DDLogLevelVerbose;
 
 + (void)initialize{
     [XLELog initLogger];

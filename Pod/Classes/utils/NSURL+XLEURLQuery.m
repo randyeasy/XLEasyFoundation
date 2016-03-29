@@ -87,18 +87,17 @@ static NSString *const kFragmentBegin   = @"#";
     id value = nil;
     if (components.count == 1) {
       // key with no value
-      value = [NSNull null];
     }
     if (components.count == 2) {
       value = [components[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-      // cover case where there is a separator, but no actual value
-      value = [value length] ? value : [NSNull null];
     }
     if (components.count > 2) {
       // invalid - ignore this pair. is this best, though?
       continue;
     }
-    mute[key] = value ?: [NSNull null];
+      if (value) {
+          mute[key] = value;
+      }
   }
   return mute.count ? mute.copy : nil;
 }

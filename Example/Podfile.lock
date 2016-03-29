@@ -10,7 +10,7 @@ PODS:
   - Mantle (2.0.6):
     - Mantle/extobjc (= 2.0.6)
   - Mantle/extobjc (2.0.6)
-  - XLEasyFoundation (0.1.4):
+  - XLEasyFoundation (0.1.6):
     - CocoaLumberjack (~> 2.2)
     - Mantle (~> 2.0)
 
@@ -24,6 +24,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
-  XLEasyFoundation: 402486d525bff33c266bcde96a30c9cb4835a5ef
+  XLEasyFoundation: 404783565e4676f9080c2b3723abb9f67103d588
 
 COCOAPODS: 0.39.0

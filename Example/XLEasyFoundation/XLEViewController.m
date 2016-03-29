@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"deviceId %@",[UIDevice xle_uniqueGlobalDeviceIdentifier]);
+    NSLog(@"deviceId %@",[UIDevice XLE_uniqueGlobalDeviceIdentifier]);
 }
 
 - (void)doAddItemsOperation{
@@ -41,27 +41,6 @@
         }
         return YES;
     }];
-    
-    [self.items addObject:[XLEDemoItem itemWithName:@"action" desc:@"app://test.com/test/testAction host为test.com subPath为test" callback:^{
-        BOOL result = [self.actin handleOpenUrl:@"app://test.com/test/testAction" withPayload:@{@"testKey":@"testValue"} context:context callback:^(NSDictionary * _Nonnull callbackPayload) {
-            [self showDemoResultString:[NSString stringWithFormat:@"action 回调 callbackPayload:%@",callbackPayload]];
-        }];
-        [self showDemoResultString:[NSString stringWithFormat:@"action 结果 result:%d",result]];
-    }]];
-    
-    [self.items addObject:[XLEDemoItem itemWithName:@"action" desc:@"app://test.com/testAction subPath对应不上，不会响应" callback:^{
-        BOOL result = [self.actin handleOpenUrl:@"app://test.com/testAction" withPayload:@{@"testKey":@"testValue"} context:context callback:^(NSDictionary * _Nonnull callbackPayload) {
-            [self showDemoResultString:[NSString stringWithFormat:@"action 回调 callbackPayload:%@",callbackPayload]];
-        }];
-        [self showDemoResultString:[NSString stringWithFormat:@"action 结果 result:%d",result]];
-    }]];
-    
-    [self.items addObject:[XLEDemoItem itemWithName:@"action" desc:@"app://test.com/testAction 测试没有subPath的action能否正常响应" callback:^{
-        BOOL result = [self.noSubPathActin handleOpenUrl:@"app://test.com/testAction" withPayload:@{@"testKey":@"testValue"} context:context callback:^(NSDictionary * _Nonnull callbackPayload) {
-            [self showDemoResultString:[NSString stringWithFormat:@"action 回调 callbackPayload:%@",callbackPayload]];
-        }];
-        [self showDemoResultString:[NSString stringWithFormat:@"action 结果 result:%d",result]];
-    }]];
 }
 
 - (void)didReceiveMemoryWarning

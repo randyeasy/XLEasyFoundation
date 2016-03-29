@@ -40,10 +40,13 @@
 
 - (id)XLE_objectAtIndex:(NSUInteger)index;
 {
+#if DEBUG
+#else
     if (index >= [self count]) {
         NSAssert2(0, @"越界了 index:%lu, count:%lu", (unsigned long)index, (unsigned long)[self count]);
         return nil;
     }
+#endif
     return [self objectAtIndex:index];
 }
 
@@ -71,33 +74,45 @@
 
 - (void)XLE_addObjectNonNil:(id)object
 {
-    if (object) {
-        [self addObject:object];
+#if DEBUG
+#else
+    if (!object) {
+        return;
     }
+#endif
+
+    [self addObject:object];
 }
 
 - (void)XLE_removeObjectAtIndex:(NSUInteger)index{
-    if (index >= [self count]) {
+#if DEBUG
+#else
+    if (index >= [self count])
         return;
-    }else{
-        [self removeObjectAtIndex:index];
-    }
+#endif
+    [self removeObjectAtIndex:index];
 }
 
 - (void)XLE_insertObjectNonNil:(id)anObject atIndex:(NSUInteger)index{
-    if (anObject && index > [self count]) {
+#if DEBUG
+#else
+    if (anObject && index > [self count])
         return;
-    }
-    else{
-        [self insertObject:anObject atIndex:index];
-    }
+#endif
+    [self insertObject:anObject atIndex:index];
 }
 
 - (BOOL)XLE_replaceObjectAtIndex:(NSUInteger)index withObjectNonNil:(id)anObject {
+#if DEBUG
+#else
     if (anObject && index < [self count]) {
+#endif
         [self replaceObjectAtIndex:index withObject:anObject];
         return YES;
+#if DEBUG
+#else
     }
+#endif
     return NO;
 }
 

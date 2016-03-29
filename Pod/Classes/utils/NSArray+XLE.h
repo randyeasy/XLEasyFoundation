@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  对Array进行保护访问 DEBUG==0下生效,非0下不生效
+ */
+
 @interface NSArray (XLE)
 - (NSString *)XLE_separateStringWithStr:(NSString *)str;
 - (id)XLE_objectAtIndex:(NSUInteger)index;

@@ -72,14 +72,11 @@
 
 @implementation NSMutableArray (XLE)
 
-- (void)XLE_addObjectNonNil:(id)object
+- (void)XLE_addObjectNullNil:(id)object
 {
-#if DEBUG
-#else
     if (!object) {
         return;
     }
-#endif
 
     [self addObject:object];
 }
@@ -93,26 +90,17 @@
     [self removeObjectAtIndex:index];
 }
 
-- (void)XLE_insertObjectNonNil:(id)anObject atIndex:(NSUInteger)index{
-#if DEBUG
-#else
+- (void)XLE_insertObjectNullNil:(id)anObject atIndex:(NSUInteger)index{
     if (anObject && index > [self count])
         return;
-#endif
     [self insertObject:anObject atIndex:index];
 }
 
-- (BOOL)XLE_replaceObjectAtIndex:(NSUInteger)index withObjectNonNil:(id)anObject {
-#if DEBUG
-#else
+- (BOOL)XLE_replaceObjectAtIndex:(NSUInteger)index withObjectNullNil:(id)anObject {
     if (anObject && index < [self count]) {
-#endif
         [self replaceObjectAtIndex:index withObject:anObject];
         return YES;
-#if DEBUG
-#else
     }
-#endif
     return NO;
 }
 

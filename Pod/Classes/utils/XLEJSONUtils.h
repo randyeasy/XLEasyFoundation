@@ -17,6 +17,6 @@
 + (NSString *)XLE_jsonToString:(id)json;
 
 //将Json string or data转化为NSArray or NSDictionary
-- (id)XLE_stringToJson:(NSString *)string;
-- (id)XLE_dataToJson:(NSData *)data;
++ (id)XLE_stringToJson:(NSString *)string;
++ (id)XLE_dataToJson:(NSData *)data;
 @end

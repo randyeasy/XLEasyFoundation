@@ -22,9 +22,9 @@
 
 @interface NSMutableArray (XLE)
 
-- (void)XLE_addObjectNonNil:(id)object;
+- (void)XLE_addObjectNullNil:(id)object;
 - (void)XLE_removeObjectAtIndex:(NSUInteger)index;
-- (void)XLE_insertObjectNonNil:(id)anObject atIndex:(NSUInteger)index;
-- (BOOL)XLE_replaceObjectAtIndex:(NSUInteger)index withObjectNonNil:(id)anObject;
+- (void)XLE_insertObjectNullNil:(id)anObject atIndex:(NSUInteger)index;
+- (BOOL)XLE_replaceObjectAtIndex:(NSUInteger)index withObjectNullNil:(id)anObject;
 
 @end

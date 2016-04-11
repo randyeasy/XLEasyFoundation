@@ -30,7 +30,7 @@
     return nil;
 }
 
-- (id)XLE_stringToJson:(NSString *)string;
++ (id)XLE_stringToJson:(NSString *)string;
 {
     NSData* data = [string dataUsingEncoding:NSUTF8StringEncoding];
     __autoreleasing NSError* error = nil;
@@ -42,7 +42,7 @@
     return result;
 }
 
-- (id)XLE_dataToJson:(NSData *)data;
++ (id)XLE_dataToJson:(NSData *)data;
 {
     __autoreleasing NSError* error = nil;
     id result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];

@@ -55,9 +55,9 @@ extern const int XLE_ERROR_PLATFORM;//2位
 @property (copy, readonly, nonatomic) NSString *originalReason;
 
 /**
- *  根据一个10位code生成一个XLEError对象
+ *  根据一个11位code生成一个XLEError对象
  *
- *  @param fullCode 完整的code码 environment除外 10位code
+ *  @param fullCode 完整的code码 environment除外 11位code
  *  @param reason   错误原因
  *
  *  @return 生成的对象
